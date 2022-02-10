@@ -33,11 +33,10 @@
     <script>
         "use strict";
 
-        let a = +prompt("Введите первое число");
-        let operation = prompt("Введите операцию");
-        let b = +prompt("Введите второе число");
-
-        let getResult = (a, operation, b) => {
+        const a = +prompt("Введите первое число");
+        const operation = prompt("Введите операцию");
+        const b = +prompt("Введите второе число");
+        const getResult = (a, operation, b) => {
             switch (operation) {
                 case "+":
                     console.log(getSum(a, b));
@@ -55,29 +54,21 @@
                     console.log("Фиг пойми что, а не операция");
             }
         }
-
-
-        let getSum = (a, b) => {
+        const getSum = (a, b) => {
             return a + b;
         }
-        let getDifference = (a, b) => {
+        const getDifference = (a, b) => {
             if (a > b) {
                 return a - b;
-            } else if (b > a) {
-                return b - a;
-            } else {
-                return 0;
             }
-
+            return b - a;
         }
-
-        let getMultiplication = (a, b) => {
+        const getMultiplication = (a, b) => {
             return a * b;
         }
-        let getDivision = (a, b) => {
+        const getDivision = (a, b) => {
             return a / b;
         }
-
         getResult(a, operation, b);
     </script>
 </body>

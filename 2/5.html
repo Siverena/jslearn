@@ -38,41 +38,62 @@ Infinity делать не нужно, однако, в случае если б
         let operation = prompt("Введите операцию");
         let b = +prompt("Введите второе число");
 
+
+        /**
+         * Функция определения операции.
+         * @param  a - первое чило.
+         * @param  operation - выполняемая операция.
+         * @param  b - второе число.
+         */
         let getResult = (a, operation, b) => {
-            switch (operation) {
-                case "+":
-                    return getSum(a, b);
-                case "-":
-                    return getDifference(a, b);
-                case "*":
-                    return getMultiplication(a, b);
-                case "/":
-                    return getDivision(a, b);
-                default:
-                    return NaN;
+                switch (operation) {
+                    case "+":
+                        return getSum(a, b);
+                    case "-":
+                        return getDifference(a, b);
+                    case "*":
+                        return getMultiplication(a, b);
+                    case "/":
+                        return getDivision(a, b);
+                    default:
+                        return NaN;
+                }
             }
-
-        }
-
+            /**
+             * Функция сложения.
+             * @param  a - первое чило.
+             * @param  b - второе число.
+             */
         let getSum = (a, b) => {
-            return a + b;
-        }
-
-        let getDifference = (a, b) => {
-            if (a > b) {
-                return a - b;
-            } else if (b > a) {
-                return b - a;
-            } else {
-                return 0;
+                return a + b;
             }
-
-        }
-
+            /**
+             * Функция получения разницы.
+             * @param  a - первое чило.
+             * @param  b - второе число.
+             */
+        let getDifference = (a, b) => {
+                if (a > b) {
+                    return a - b;
+                } else if (b > a) {
+                    return b - a;
+                } else {
+                    return 0;
+                }
+            }
+            /**
+             * Функция произведения.
+             * @param  a - первое чило.
+             * @param  b - второе число.
+             */
         let getMultiplication = (a, b) => {
-            return a * b;
-        }
-
+                return a * b;
+            }
+            /**
+             * Функция деления.
+             * @param  a - первое чило.
+             * @param  b - второе число.
+             */
         let getDivision = (a, b) => {
             return a / b;
         }
