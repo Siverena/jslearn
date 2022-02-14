@@ -41,12 +41,20 @@
             price: 78,
         }, ];
 
-        let prod = products.filter(
-            function(e) {
-                if (e.photos) {
-                    return e.photos.length > 0;
-                }
-            });
+        // let prod = products.filter(
+        //     function(e) {
+        //         if (e.photos) {
+        //             if (e.photos.length > 0) {
+        //                 return true;
+        //             }
+        //         }
+        //         return false;
+        //     });
+
+        const prod = products.filter(e => {
+            return e.photos && e.photos.length > 0;
+        });
+
         console.log(prod);
 
         /**
