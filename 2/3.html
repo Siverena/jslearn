@@ -23,13 +23,10 @@
     <script>
         "use strict";
 
-        let a = +prompt("Введите число");
-        let b = +prompt("и еще раз");
-        let res = 0;
+        const a = +prompt("Введите число");
+        const b = +prompt("и еще раз");
         if (a > 0 && b > 0) {
-            res = a - b
             console.log(`${a}-${b} = ${a-b}`);
-
         } else if (a < 0 && b < 0) {
             console.log(`${a}*${b} = ${a*b}`);
         } else if (a > 0 && b < 0 || a < 0 && b > 0) {
