@@ -126,9 +126,12 @@
          */
         const list = document.querySelectorAll("li:nth-child(2n)");
         console.log(list);
-        for (const elem of list) {
-            elem.style.backgroundColor = "#000";
-        }
+        // for (const elem of list) {
+        //     elem.style.backgroundColor = "#000";
+        // }
+        list.forEach(el => {
+            el.style.backgroundColor = "#000";
+        });
     </script>
 </body>
 

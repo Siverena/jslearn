@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <style>
+        i {
+            font-size: 50px;
+        }
+        
+        .golden {
+            color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+Обязательное задание.
+
+Выполнить все задачи в теге script. Комментарии, в которых написаны задачи, не
+стирать, код с решением задачи пишем под комментарием.
+-->
+
+    <div class="stars_container">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+    </div>
+
+    <script>
+        "use strict";
+
+        /*
+        1. При наведении на любую из звезд, данной звезде должен ставиться класс
+        golden, также такой класс должен ставиться всем звездам до нее слева.
+        */
+        const starsContainer = document.querySelector(".stars_container")
+        const stars = starsContainer.querySelectorAll(".fa-star");
+
+        function fillAllPrevStars(elem) {
+            for (let i = 0; i <= elem.index; i++)
+                elem.parentElement.children[i].classList.add("golden");
+        }
+
+        function fillStars(elem) {
+            if (!elem) {
+                stars.forEach(star => {
+                    star.classList.remove("golden");
+                })
+                return;
+            }
+            let children = elem.parentElement.children;
+            for (let i = 0; i < children.length; i++) {
+                if (i <= elem.index) {
+                    elem.parentElement.children[i].classList.add("golden");
+                    console.dir(elem.parentElement.children[i]);
+                } else {
+                    elem.parentElement.children[i].classList.remove("golden");
+                }
+            }
+        }
+
+
+
+        stars.forEach((star, i) => {
+            star.index = i;
+            star.addEventListener("mouseover", (evt) => {
+                fillStars(evt.target);
+            })
+        });
+
+        /*
+        2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
+        задания должны быть удалены.
+        */
+
+        function unFillAllPrevStars(elem) {
+            for (let i = 0; i <= elem.index; i++)
+                elem.parentElement.children[i].classList.remove("golden");
+        }
+
+        const checkMouseTarget = (event) => {
+            if (event.target.parentElement !== starsContainer && event.target !== starsContainer) {
+                fillStars(false);
+            }
+        }
+
+        stars.forEach(star => {
+            star.addEventListener("mouseout", (evt) => {
+                document.addEventListener("mouseover", checkMouseTarget);
+            });
+        });
+
+        /*
+        3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
+        звезды (временно могут становиться черными). Почему так? Напишите словами.
+        Можем ли мы это исправить? Если да, то предложите решение.
+
+
+        1. Избавиться от расстояния между звездочками с помощью css, но мы же на курсе по js...так что..
+        2. Установить интервал, ждать прежде чем обнулять стили, и проверять на каком элементе курсор
+        3. Просто написать функцию проверки положения курсора и при mouseout проверять где произошел mouseover - реализовано -> checkMouseTarget
+        */
+    </script>
+</body>
+
+</html>
