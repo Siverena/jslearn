@@ -48,14 +48,14 @@
         const productName = document.querySelectorAll(".productName");
         productName.forEach(el => {
             el.style.fontSize = "24px";
-        })
+        });
 
         /*
         2. Установите всем элементам с классом "product" внешний отступ справа 50px.
         */
         products.forEach(el => {
             el.style.marginRight = "24px";
-        })
+        });
 
         /*
         3. При клике на кнопку "В корзину" название кнопки должно поменяться на
@@ -65,8 +65,8 @@
             el.addEventListener("click", (event) => {
                 event.target.innerText = "Добавлено";
                 event.target.setAttribute("disabled", "");
-            })
-        }
+            });
+        };
         document.querySelectorAll(".product button").forEach(el => addToCart(el));
 
         /*
