@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="main.js"></script>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Собери свой бургер</h1>
+    <form action="">
+        <fieldset class="size">
+            <h2>Размер</h2>
+            <input type="radio" name="size" id="small" value="small" required>
+            <label for="small">Маленький (50 рублей, 20 калорий).</label>
+            <br>
+            <input type="radio" name="size" id="big" value="big" required>
+            <label for="big">Большой (100 рублей, 40 калорий).
+            </label>
+        </fieldset>
+        <fieldset class="stuffing">
+            <h2>Начинка</h2>
+            <input type="checkbox" name="cheese" id="cheese" value="cheese">
+            <label for="cheese">С сыром (+10 рублей, +20 калорий).</label>
+            <br>
+            <input type="checkbox" name="salat" id="salat" value="salat">
+            <label for="salat">С салатом (+20 рублей, +5 калорий).</label>
+            <br>
+            <input type="checkbox" name="potato" id="potato" value="potato">
+            <label for="potato">С картофелем (+15 рублей, +10 калорий).
+            </label>
+        </fieldset>
+        <fieldset class="topping">
+            <h2>Топпинг</h2>
+            <input type="checkbox" name="seasoning" id="seasoning" value="seasoning">
+            <label for="seasoning">посыпать приправой (+15 рублей, +0 калорий)</label>
+            <br>
+            <input type="checkbox" name="mayonnaise" id="mayonnaise" value="mayonnaise">
+            <label for="mayonnaise">полить
+                майонезом (+20 рублей, +5 калорий).</label>
+
+        </fieldset>
+        <button>Рассчитать стоимость</button>
+    </form>
+    <div class="result-price"> <span> 0</span> р</div>
+    <div class="result-ccal"><span> 0</span>кКал</div>
+</body>
+
+</html>
