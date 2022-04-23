@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="main.js"></script>
+    <title>Document</title>
+    <style>
+        .error {
+            border: 1px solid red;
+        }
+        
+        .errorText {
+            color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form" class="form" method="post" action="">
+        <div><label for="name">Имя</label><input class="input" id="name" name="" type="text"></div>
+        <div> <label for="tel">Телефон</label><input class="input" id="tel" name="" type="text"></div>
+        <div><label for="mail">e-mail</label><input class="input" id="mail" name="" type="text"></div>
+        <div> <label for="text"></label><textarea class="input" name="" id="text" cols="30" rows="10"></textarea> </div>
+
+        <button id="btn">Отправить</button>
+    </form>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('form').addEventListener('submit', e => {
+            const valid = new Validator('form');
+            if (!valid.valid) {
+                e.preventDefault();
+            }
+
+
+        })
+    });
+</script>
+
+</html>
